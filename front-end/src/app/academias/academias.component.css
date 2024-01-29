@@ -14,6 +14,26 @@ section {
     padding: 20px;
 }
 
+#delete,
+#update {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-family: "Gotham Bold";
+    padding: 5px 10px;
+}
+
+#delete {
+    background-color: #dc0a17;
+    margin-left: 10px;
+}
+
+#update {
+    background-color: #ffb612;
+}
+
 small {
     font-family: "Gotham Bold";
     font-size: 0.875rem;

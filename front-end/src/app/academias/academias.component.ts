@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Academia } from '../models/academia';
 import { ApiService } from '../services/api.service';
+import { RefreshAcademiasService } from '../services/refresh-academias.service';
 
 @Component({
     selector: 'app-academias',
@@ -9,11 +10,18 @@ import { ApiService } from '../services/api.service';
 })
 export class AcademiasComponent implements OnInit {
     academias: Academia[] = [];
+    editMode = false;
 
-    constructor(private apiService: ApiService) {}
+    constructor(
+        private apiService: ApiService,
+        private refreshAcademias: RefreshAcademiasService
+    ) {}
 
     ngOnInit(): void {
         this.getAcademias();
+        this.refreshAcademias.getUpdateObservable().subscribe(() => {
+            this.getAcademias();
+        });
     }
 
     vestiarioImage(opc: String) {
@@ -29,6 +37,16 @@ export class AcademiasComponent implements OnInit {
     getAcademias() {
         this.apiService.getAcademias().subscribe((academias: Academia[]) => {
             this.academias = academias;
+        });
+    }
+
+    startUpdate() {
+        this.editMode = true;
+    }
+
+    deleteAcademia(academia: Academia) {
+        this.apiService.deleteAcademia(academia).subscribe(() => {
+            this.getAcademias();
         });
     }
 }

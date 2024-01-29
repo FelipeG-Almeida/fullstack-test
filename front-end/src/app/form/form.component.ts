@@ -14,12 +14,12 @@ export class FormComponent {
         this.academiaForm = this.fb.group({
             nome: ['', Validators.required],
             endereco: ['', Validators.required],
-            situacao: ['aberto', Validators.required],
-            mascara: ['obrigatorio', Validators.required],
-            toalha: ['obrigatorio', Validators.required],
-            bebedouro: ['parcial', Validators.required],
-            vestiarios: ['liberado', Validators.required],
-            week: [''],
+            status: ['Aberto', Validators.required],
+            mascara: ['Obrigatório', Validators.required],
+            toalha: ['Obrigatório', Validators.required],
+            bebedouro: ['Parcial', Validators.required],
+            vestiarios: ['Liberado', Validators.required],
+            weekDays: [''],
             sab: [''],
             dom: [''],
         });
@@ -30,8 +30,10 @@ export class FormComponent {
             this.apiService
                 .saveAcademia(this.academiaForm.value)
                 .subscribe(() => {
-                    this.apiService.getAcademias();
+                    this.apiService.notifyUpdateAcademias();
                 });
         }
+
+        this.academiaForm.reset();
     }
 }

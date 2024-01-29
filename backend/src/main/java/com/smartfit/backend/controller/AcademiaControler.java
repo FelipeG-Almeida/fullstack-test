@@ -23,10 +23,10 @@ public class AcademiaControler {
 	@PostMapping
 	public ResponseEntity cadastra(@RequestBody @Valid DadosCadastroAcademia dados, UriComponentsBuilder uriBuilder) {
 		var academia = new Academia(dados);
-		if (academia.getSab() == null) {
+		if (academia.getSab() == null || academia.getSab().isEmpty()) {
 			academia.setSab("Fechada");
 		}
-		if (academia.getDom() == null) {
+		if (academia.getDom() == null || academia.getDom().isEmpty()) {
 			academia.setDom("Fechada");
 		}
 		repository.save(academia);

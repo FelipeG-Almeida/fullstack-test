@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Academia } from '../models/academia';
+import { RefreshAcademiasService } from './refresh-academias.service';
 
 @Injectable({
     providedIn: 'root',
@@ -9,7 +10,10 @@ import { Academia } from '../models/academia';
 export class ApiService {
     url = 'http://localhost:8080/academias';
 
-    constructor(private httpClient: HttpClient) {}
+    constructor(
+        private httpClient: HttpClient,
+        private refreshAcademia: RefreshAcademiasService
+    ) {}
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     };
@@ -24,5 +28,16 @@ export class ApiService {
             JSON.stringify(academia),
             this.httpOptions
         );
+    }
+
+    deleteAcademia(academia: Academia) {
+        return this.httpClient.delete<Academia>(
+            this.url + '/' + academia.id,
+            this.httpOptions
+        );
+    }
+
+    notifyUpdateAcademias() {
+        this.refreshAcademia.refreshAcademias();
     }
 }

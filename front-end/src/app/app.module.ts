@@ -10,6 +10,7 @@ import { LegendComponent } from './legend/legend.component';
 import { AcademiasComponent } from './academias/academias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormularioEdicaoAcademiaComponent } from './formulario-edicao-academia/formulario-edicao-academia.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
         FormComponent,
         LegendComponent,
         AcademiasComponent,
+        FormularioEdicaoAcademiaComponent,
     ],
     imports: [
         BrowserModule,
