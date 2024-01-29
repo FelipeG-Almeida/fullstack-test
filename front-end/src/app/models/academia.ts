@@ -10,4 +10,5 @@ export interface Academia {
     weekDays: string;
     sab: string;
     dom: string;
+    editMode: boolean;
 }

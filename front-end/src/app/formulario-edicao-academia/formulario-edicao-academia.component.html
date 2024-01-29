@@ -1,2 +1,101 @@
-<p>formulario-edicao-academia works!</p>
-<p>{{ academia }}</p>
+<form [formGroup]="academiaForm" (ngSubmit)="updateAcademia()">
+    <select
+        id="status"
+        name="status"
+        formControlName="status"
+        [ngStyle]="{ color: academia.status ? '#2FC022' : '#dc0a17' }"
+    >
+        {{
+            academia.status ? "Aberto" : "Fechado"
+        }}
+        <option [ngValue]="true">Aberto</option>
+        <option [ngValue]="false">Fechado</option>
+    </select>
+    <input id="nome" type="text" formControlName="nome" />
+    <input id="endereco" type="text" formControlName="endereco" />
+    <div *ngIf="academia.status">
+        <hr />
+        <div id="legenda">
+            <div>
+                <label for="mascara">Máscara</label>
+                <select
+                    class="legendForm"
+                    name="mascara"
+                    id="mascara"
+                    formControlName="mascara"
+                >
+                    <option value="Obrigatório">Obrigatório</option>
+                    <option value="Recomendado">Recomendado</option>
+                </select>
+            </div>
+            <div>
+                <label for="toalha">Toalha</label>
+                <select
+                    class="legendForm"
+                    name="toalha"
+                    id="toalha"
+                    formControlName="toalha"
+                >
+                    <option value="Obrigatório">Obrigatório</option>
+                    <option value="Recomendado">Recomendado</option>
+                </select>
+            </div>
+            <div>
+                <label for="bebedouro">Bebedouro</label>
+                <select
+                    class="legendForm"
+                    name="bebedouro"
+                    id="bebedouro"
+                    formControlName="bebedouro"
+                >
+                    <option value="Parcial">Parcial</option>
+                    <option value="Proibido">Proibido</option>
+                </select>
+            </div>
+            <div>
+                <label for="vestiarios">Vestiários</label>
+                <select
+                    class="legendForm"
+                    name="vestiarios"
+                    id="vestiarios"
+                    formControlName="vestiarios"
+                >
+                    <option value="Liberado">Liberado</option>
+                    <option value="Parcial">Parcial</option>
+                    <option value="Fechado">Fechado</option>
+                </select>
+            </div>
+        </div>
+        <div id="horarios">
+            <div>
+                <label id="dias">Seg. à Sex.</label>
+                <input
+                    class="dias"
+                    id="weekDays"
+                    type="text"
+                    formControlName="weekDays"
+                />
+            </div>
+            <div>
+                <label id="dias">Sáb.</label>
+                <input
+                    class="dias"
+                    id="sab"
+                    type="text"
+                    formControlName="sab"
+                />
+            </div>
+            <div>
+                <label id="dias">Dom.</label>
+                <input
+                    class="dias"
+                    id="dom"
+                    type="text"
+                    formControlName="dom"
+                />
+            </div>
+        </div>
+    </div>
+    <button (click)="cancelarClick()">Cancelar</button>
+    <button type="submit">Atualizar</button>
+</form>

@@ -1,10 +1,12 @@
 <section>
     <div class="card" *ngFor="let academia of academias">
-        <div *ngIf="!editMode">
+        <div *ngIf="!academia.editMode">
             <button id="delete" (click)="deleteAcademia(academia)">
                 Excluir
             </button>
-            <button id="update" (click)="startUpdate()">Atualizar</button>
+            <button id="update" (click)="startUpdate(academia)">
+                Atualizar
+            </button>
             <small
                 [ngStyle]="{ color: academia.status ? '#2FC022' : '#dc0a17' }"
                 >{{ academia.status ? "Aberto" : "Fechado" }}</small
@@ -57,8 +59,9 @@
             </div>
         </div>
         <app-formulario-edicao-academia
-            *ngIf="editMode"
+            *ngIf="academia.editMode"
             [academia]="academia"
+            (cancelarEdicao)="cancelUpdate(academia)"
         ></app-formulario-edicao-academia>
     </div>
 </section>

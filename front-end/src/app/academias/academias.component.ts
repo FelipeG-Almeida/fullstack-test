@@ -40,8 +40,12 @@ export class AcademiasComponent implements OnInit {
         });
     }
 
-    startUpdate() {
-        this.editMode = true;
+    startUpdate(academia: Academia) {
+        academia.editMode = true;
+    }
+
+    cancelUpdate(academia: Academia) {
+        academia.editMode = false;
     }
 
     deleteAcademia(academia: Academia) {

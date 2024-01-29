@@ -14,8 +14,12 @@ export class ApiService {
         private httpClient: HttpClient,
         private refreshAcademia: RefreshAcademiasService
     ) {}
+
     httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+        }),
     };
 
     getAcademias(): Observable<Academia[]> {
@@ -25,6 +29,14 @@ export class ApiService {
     saveAcademia(academia: Academia): Observable<Academia> {
         return this.httpClient.post<Academia>(
             this.url,
+            JSON.stringify(academia),
+            this.httpOptions
+        );
+    }
+
+    updateAcademia(academia: Academia): Observable<Academia> {
+        return this.httpClient.put<Academia>(
+            this.url + '/' + academia.id,
             JSON.stringify(academia),
             this.httpOptions
         );
