@@ -1,0 +1,53 @@
+<section>
+    <div class="card" *ngFor="let academia of academias">
+        <small [ngStyle]="{ color: academia.status ? '#2FC022' : '#dc0a17' }">{{
+            academia.status ? "Aberto" : "Fechado"
+        }}</small>
+        <p id="nome">{{ academia.nome }}</p>
+        <p id="endereco">{{ academia.endereco }}</p>
+        <div *ngIf="academia.status">
+            <hr />
+            <div id="legenda">
+                <img
+                    [src]="
+                        academia.mascara === 'Obrigatório'
+                            ? '../../assets/images/required-mask.png'
+                            : '../../assets/images/recommended-mask.png'
+                    "
+                    alt=""
+                />
+                <img
+                    [src]="
+                        academia.toalha === 'Obrigatório'
+                            ? '../../assets/images/required-towel.png'
+                            : '../../assets/images/recommended-towel.png'
+                    "
+                    alt=""
+                />
+                <img
+                    [src]="
+                        academia.bebedouro === 'Parcial'
+                            ? '../../assets/images/partial-fountain.png'
+                            : '../../assets/images/forbidden-fountain.png'
+                    "
+                    alt=""
+                />
+                <img [src]="vestiarioImage(academia.vestiario)" alt="" />
+            </div>
+            <div id="horarios">
+                <div>
+                    <p id="dias">Seg. à Sex.</p>
+                    <p id="hora">{{ academia.weekDays }}</p>
+                </div>
+                <div>
+                    <p id="dias">Sáb.</p>
+                    <p id="hora">{{ academia.sab }}</p>
+                </div>
+                <div>
+                    <p id="dias">Dom.</p>
+                    <p id="hora">{{ academia.dom }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

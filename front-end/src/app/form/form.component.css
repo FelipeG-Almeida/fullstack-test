@@ -1,0 +1,74 @@
+form {
+    border: 2px solid #ededed;
+    border-radius: 15px;
+    padding: 20px 25px;
+}
+
+fieldset {
+    border: none;
+    column-gap: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+legend {
+    color: #808080;
+    font-family: "Gotham Book";
+    font-size: 1.25rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-family: "Gotham Light";
+    margin: 10px 0 5px 0;
+}
+
+input,
+select {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    font-family: "Gotham Light";
+    padding: 10px;
+}
+
+.buttons {
+    column-gap: 25px;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Gotham Bold";
+    padding: 15px 0;
+    text-transform: uppercase;
+    transition: 0.5s all;
+    width: 280px;
+}
+
+#register {
+    background-color: #ffb612;
+}
+
+#register:hover {
+    background-color: #cc910e;
+    color: #fff;
+}
+
+#clear {
+    background-color: #fff;
+    border: 1px solid #808080;
+}
+
+#clear:hover {
+    background-color: #808080;
+    color: #fff;
+}

@@ -1,0 +1,51 @@
+<form [formGroup]="academiaForm" (ngSubmit)="cadastrarAcademia()">
+    <fieldset>
+        <legend>Insira os dados abaixo</legend>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" formControlName="nome" />
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" formControlName="endereco" />
+            <label for="situacao">Situação</label>
+            <select name="situacao" formControlName="situacao">
+                <option value="aberto">Aberto</option>
+                <option value="fechado">Fechado</option>
+            </select>
+        </div>
+        <div>
+            <label for="mascara">Máscara</label>
+            <select name="mascara" formControlName="mascara">
+                <option value="obrigatorio">Obrigatório</option>
+                <option value="recomendado">Recomendado</option>
+            </select>
+            <label for="toalha">Toalha</label>
+            <select name="toalha" formControlName="toalha">
+                <option value="obrigatorio">Obrigatório</option>
+                <option value="recomendado">Recomendado</option>
+            </select>
+            <label for="bebedouro">Bebedouro</label>
+            <select name="bebedouro" formControlName="bebedouro">
+                <option value="parcial">Parcial</option>
+                <option value="proibido">Proibido</option>
+            </select>
+            <label for="vestiarios">Vestiários</label>
+            <select name="vestiarios" formControlName="vestiarios">
+                <option value="liberado">Liberado</option>
+                <option value="parcial">Parcial</option>
+                <option value="fechado">Fechado</option>
+            </select>
+        </div>
+        <div>
+            <label for="week">Seg. à Sex.</label>
+            <input type="text" name="week" formControlName="week" />
+            <label for="sab">Sáb.</label>
+            <input type="text" name="sab" formControlName="sab" />
+            <label for="dom">Dom.</label>
+            <input type="text" name="dom" formControlName="dom" />
+        </div>
+    </fieldset>
+    <div class="buttons">
+        <button id="register" type="submit">Cadastrar Unidade</button>
+        <button id="clear" type="reset">Limpar</button>
+    </div>
+</form>

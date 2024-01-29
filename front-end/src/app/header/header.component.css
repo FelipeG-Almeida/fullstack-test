@@ -1,0 +1,33 @@
+.logo {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin: 25px 0;
+    width: 200px;
+}
+
+h1 {
+    color: #333333;
+    font-family: "Gotham Bold";
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+hr {
+    border: 6px solid #333333;
+    margin-left: 0;
+    width: 100px;
+}
+
+.instructions {
+    padding: 4% 5%;
+}
+
+p {
+    font-family: "Gotham Book";
+    margin-top: 35px;
+}
