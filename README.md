@@ -1,63 +1,32 @@
-# Front-end Smart Fit
-> Esse é um pequeno projeto criado como base para a avaliação de habilidades técnicas para o papel de Front-end.
+# Teste Full-Stack Artemis
 
-# Preview
+Este é um projeto web desenvolvido utilizando Angular para o front-end e Java com Spring Boot para o backend. O banco de dados utilizado é o H2.
 
-![preview](preview.png)
+## Configuração e Execução
 
-# Proposta de Teste
-> A Smart Fit, por atuar no segmento de fitness, passou por várias mudanças na pandemia. Foi necessário desenvolver uma página para buscar unidades **fechadas** ou **abertas** para consulta e reserva.
+### Requisitos Prévios
 
-> Optamos por não disponibilizar a API de buscas de unidades abertas/fechadas original para esse teste.
+- Node.js e npm: [https://nodejs.org/](https://nodejs.org/)
+- Angular CLI: Instale usando `npm install -g @angular/cli`
+- Java: [https://www.oracle.com/java/technologies/javase-downloads.html](https://www.oracle.com/java/technologies/javase-downloads.html)
 
-> Nesse teste você implementará as funcionalidades descritas abaixos. Tenha atenção com as regras de negócios definidas mais adiante.
+### Configuração do Front-end
 
-> Lembre-se de **seguir o layout proposto** em _material.
+1. Navegue até o diretório `front-end`.
+2. Execute `npm install` para instalar as dependências.
+3. Execute `ng serve` para iniciar o servidor de desenvolvimento do Angular.
+4. Acesse `http://localhost:4200/` no navegador para visualizar o aplicativo.
 
-> Caso não consiga concluir todas as funcionalidade, lembre-se que o mais importante é termos noção da qualidade do código e de suas habilidades para projeto de sistemas. Nesse caso, complemente sua solução com comentários e documentação sobre como terminaria o teste.
+### Configuração do Backend
 
-### Funcionalidades
-- Carrega unidades através do arquivo json `https://test-frontend-developer.s3.amazonaws.com/data/locations.json` com method `GET`
-- Busca todas as unidades
-- Busca unidades com filtros
-- Mostra previsão de resultados encontrados
-- Mostra unidades ao buscar
+1. Abra o projeto no ambiente de desenvolvimento (IDE) de sua escolha.
+2. Certifique-se de que as dependências do Maven foram baixadas.
+3. Execute a classe main `BackendApplication` para iniciar o servidor Spring Boot.
+4. O servidor será iniciado em `http://localhost:8080/`.
 
-### Regras de negócio
-- Filtrar unidades abertas ou fechadas
-- Filtrar unidades por período de funcionamento
-- Caso não encontre unidades, mostrar uma menssagem ao usuário "Nenhuma unidade encontrada"
-- Validar para mostrar ícones corretos de acordo com o status
+### Configuração do Banco de Dados
 
-### Componentes Macro
-- Formulário de busca com filtros
-- Legenda
-- Lista de unidades
-
-### Materiais disponíveis
-> Em `./_material` você encontra:
-- layout (mobile e desktop)
-- Textos
-- Cores
-- imagens
-- fonts
-
-# Entrega
-> No seu github, crie um repositório público com o teste e nos envie (caso queira enviar a url do app funcionando no Heroku, vercel ou equivalente seria um plus)
-
-> Não faça Pull Request para esse repositório.
-
-### Avaliação
-- Instruções no README.md
-- Lógica de programação
-- Qualidade de código
-- Qualidade de entrega (como se fosse para produção)
-- Fidelidade ao layout proposto
-- Responsive design
-- cross browser and device (mobile, tablet e desktop)
-
-> Plus
-- Teste unitário e e2e (teste apenas o que achar mais importante).
-- Travis CI
-- App em produção (Ex.: Heroku, Vercel e etc...)
-- Rodando com Docker localmente
+- O H2 Console pode ser acessado em `http://localhost:8080/h2`. As configurações padrão do banco de dados são:
+- url: jdbc:h2:mem:testdb
+- username: sa
+- password: password
