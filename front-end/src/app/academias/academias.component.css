@@ -78,3 +78,10 @@ img {
     font-family: "Gotham Book";
     margin: 10px;
 }
+
+@media screen and (max-width: 1023px) {
+    section {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+}

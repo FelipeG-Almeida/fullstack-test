@@ -26,7 +26,7 @@ export class FormularioEdicaoAcademiaComponent implements OnInit {
             mascara: [this.academia.mascara, Validators.required],
             toalha: [this.academia.toalha, Validators.required],
             bebedouro: [this.academia.bebedouro, Validators.required],
-            vestiarios: [this.academia.vestiario, Validators.required],
+            vestiario: [this.academia.vestiario, Validators.required],
             weekDays: [this.academia.weekDays],
             sab: [this.academia.sab],
             dom: [this.academia.dom],
